@@ -31,9 +31,7 @@ module.exports = {
           "**/categories",
           "**/posts",
           "**/pages",
-          "**/media",
           "**/tags",
-          "**/taxonomies",
         ]
       }
     }
