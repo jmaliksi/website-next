@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.navbar {
+  background-color: #eeeeee;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.homeLink {
+  float: left;
+}
+
+.navigation {
+  text-align: center;
+}
+
+.activeNavLink {
+  background-color: #000000;
+}
+
+.navLink {
+  color: #ff0000;
+}

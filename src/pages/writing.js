@@ -8,7 +8,7 @@ function Title({children}) {
 }
 
 function WritingEntry(props) {
-  const { title, slug, excerpt, tags } = props.node;
+  const { title, excerpt } = props.node;
 
   return (
     <div>
