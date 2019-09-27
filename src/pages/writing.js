@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "../components/header"
 import Sidebar from "../components/sidebar"
+import Layout from "../components/layout"
+import styles from "../styles/writing.module.css"
 
 function Title({children}) {
   return <h1>{children}</h1>;
@@ -20,15 +21,14 @@ function WritingEntry(props) {
 
 export default ({data}) => {
   return (
-    <div>
-      <Header highlight="Words" />
+    <Layout highlight="Words">
       <Sidebar data={data.allWordpressPost.nodes} />
-      {
+      <div className={styles.excerpts}>{
         data.allWordpressPost.nodes.map(node => (
           <WritingEntry node={node} key={node.slug} />
         ))
-      }
-    </div>
+      }</div>
+    </Layout>
   );
 }
 

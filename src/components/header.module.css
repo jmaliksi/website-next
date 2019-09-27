@@ -6,6 +6,7 @@
   height: 50px;
   width: 100%;
   vertical-align: middle;
+  top: 0;
 }
 
 .homeLink {
@@ -17,7 +18,7 @@
 }
 
 .activeNavLink {
-  background-color: #000000;
+  background-color: #aaaaaa;
 }
 
 .navLink {

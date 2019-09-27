@@ -4,7 +4,7 @@ import styles from "./header.module.css"
 
 function HomeLink(props) {
   return (
-    <div class={styles.homeLink}>
+    <div className={styles.homeLink}>
       <Link to="/">Joe Maliksi</Link>
     </div>
   );
@@ -13,19 +13,27 @@ function HomeLink(props) {
 function HeaderLink(props) {
   const { to, name, highlight } = props;
 
+  let className = styles.navLink;
   if (highlight === name) {
-    return <Link to={to} class={styles.activeNavLink}>{name}</Link>;
+    className = styles.activeNavLink;
   }
-  return <Link to={to} class={styles.navLink}>{name}</Link>;
+  return <Link to={to} className={className}>{name}</Link>;
+}
+
+function Divider() {
+  return <span>&nbsp;|&nbsp;</span>
 }
 
 export default (props) => (
-  <div class={styles.navbar}>
+  <div className={styles.navbar}>
     <HomeLink />
-    <div class={styles.navigation}>
+    <div className={styles.navigation}>
       <HeaderLink to="/#about" name="About" highlight={props.highlight} />
+      <Divider />
       <HeaderLink to="/art" name="Art" highlight={props.highlight} />
+      <Divider />
       <HeaderLink to="/code" name="Code" highlight={props.highlight} />
+      <Divider />
       <HeaderLink to="/writing" name="Words" highlight={props.highlight} />
     </div>
   </div>

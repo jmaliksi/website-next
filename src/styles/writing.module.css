@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.excerpts {
+  background-color: #bbbbbb;
+  width: 100% - 200px;
+  float: left;
+  margin-left: 200px;
+}
