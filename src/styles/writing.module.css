@@ -9,9 +9,12 @@
 }
 
 .title {
+  font-family: "cormorant garamond", serif;
 }
 
 .writingEntry {
+  font-family: "open sans", serif;
+  font-weight: 200;
   margin: 20px 20px 20px 50px;
   width: 80%;
 }

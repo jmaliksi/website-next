@@ -14,7 +14,7 @@ function HeaderLink(props) {
   const { to, name, highlight } = props;
 
   let className = styles.navLink;
-  if (highlight === name) {
+  if (highlight.toLowerCase() === name.toLowerCase()) {
     className = styles.activeNavLink;
   }
   return <Link to={to} className={className}>{name}</Link>;
@@ -29,13 +29,13 @@ export default (props) => (
     <div className={styles.navContainer}>
       <HomeLink />
       <div className={styles.navigation}>
-        <HeaderLink to="/#about" name="About" highlight={props.highlight} />
+        <HeaderLink to="/#about" name="about" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/art" name="Art" highlight={props.highlight} />
+        <HeaderLink to="/art" name="art" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/code" name="Code" highlight={props.highlight} />
+        <HeaderLink to="/code" name="code" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/writing" name="Words" highlight={props.highlight} />
+        <HeaderLink to="/writing" name="words" highlight={props.highlight} />
       </div>
     </div>
   </div>
