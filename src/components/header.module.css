@@ -20,9 +20,9 @@
 }
 
 .navbar a:hover {
-  box-shadow: 0 0 5px 0 #bbbbbb;
-  -webkit-box-shadow: 0 0 5px 0 #bbbbbb;
-  -moz-box-shadow: 0 0 5px 0 #bbbbbb;
+  box-shadow: 0 5px 5px -5px #333;
+  -webkit-box-shadow: 0 5px 5px -5px #333;
+  -moz-box-shadow: 0 5px 5px -5px #333;
 }
 
 .homeLink {

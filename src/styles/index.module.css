@@ -31,5 +31,6 @@
   margin-bottom: 15px 0;
 }
 
-.contactInfo a {
+.contactInfo a:hover {
+  text-transform: uppercase;
 }
