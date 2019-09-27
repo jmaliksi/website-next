@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+.content {
+  width: 90%;
+  margin: auto;
+}
+
+.contactSection {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.contactLabel {
+  float: left;
+  width: 150px;
+}
+
+.contactInfo {
+  float: left;
+  margin: 0;
+}
+
+.contactInfo ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.contactInfo li {
+  margin-bottom: 15px 0;
+}
+
+.contactInfo a {
+}

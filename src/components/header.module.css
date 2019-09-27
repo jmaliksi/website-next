@@ -14,13 +14,13 @@
 }
 
 .navbar a {
-  text-decoration: none;
-  color: #111111;
   padding: 5px 8px;
 }
 
 .navbar a:hover {
-  background-color: #888888;
+  box-shadow: 0 0 5px 0 #bbbbbb;
+  -webkit-box-shadow: 0 0 5px 0 #bbbbbb;
+  -moz-box-shadow: 0 0 5px 0 #bbbbbb;
 }
 
 .homeLink {
@@ -41,9 +41,12 @@
 }
 
 .activeNavLink {
-  background-color: #cccccc;
+  background-color: #ffffff;
+
+  box-shadow: 0 7px 5px -7px #bbbbbb;
+  -webkit-box-shadow: 0 7px 5px -7px #bbbbbb;
+  -moz-box-shadow: 0 7px 5px -7px #bbbbbb;
 }
 
 .navLink {
-  color: #000000;
 }

@@ -7,3 +7,9 @@ body {
   margin: 0;
   font-family: helvetica, sans-serif;
 }
+
+a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: bold;
+}
