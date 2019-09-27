@@ -32,7 +32,7 @@ export default ({data}) => (
   <Layout highlight="About">
     <div className={styles.content}>
       <h1>hi</h1>
-      <h2>about</h2>
+      <h2 id="about">about</h2>
       <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }} />
       <ContactInfo />
     </div>

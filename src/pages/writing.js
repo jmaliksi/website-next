@@ -5,14 +5,14 @@ import Layout from "../components/layout"
 import styles from "../styles/writing.module.css"
 
 function Title({children}) {
-  return <h1>{children}</h1>;
+  return <div className={styles.title}><h1>{children}</h1></div>;
 }
 
 function WritingEntry(props) {
-  const { title, excerpt } = props.node;
+  const { title, excerpt, slug } = props.node;
 
   return (
-    <div className={styles.writingEntry}>
+    <div className={styles.writingEntry} id={slug}>
       <Title>{title}</Title>
       <div dangerouslySetInnerHTML={{ __html: excerpt }} />
     </div>
