@@ -19,8 +19,9 @@ function ContactInfo() {
         <div className={styles.contactLabel}>or just stalk</div>
         <div className={styles.contactInfo}>
           <ul>
-            <li><a href="https://twitter.com/ch00beh">Twitter</a></li>
+            <li><a href="https://github.com/jmaliksi/">GitHub</a></li>
             <li><a href="http://www.linkedin.com/pub/joseph-maliksi/35/b/903">LinkedIn</a></li>
+            <li><a href="https://twitter.com/ch00beh">Twitter</a></li>
           </ul>
         </div>
       </div>
