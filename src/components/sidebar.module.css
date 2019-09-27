@@ -1,8 +1,32 @@
 @charset "utf-8";
 
 .sidebar {
-  background-color: #aaaaaa;
+  background-color: #ffffff;
   position: fixed;
-  width: 200px;
+  width: 250px;
   float: left;
+  border-right: 1px solid #dddddd;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.sidebarList {
+  list-style-type: none;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.sidebarList li {
+  margin-bottom: 10px;
+}
+
+.sidebarLink {
+  font-size: small;
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+}
+
+.sidebarLink:hover {
+  background-color: #888888;
 }

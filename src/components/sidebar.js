@@ -7,7 +7,7 @@ function SidebarEntry(props) {
   // TODO figure out anchors
   return (
     <li>
-      <Link to={`/writing/#${slug}`}>{title}</Link>
+      <Link to={`/writing/#${slug}`} className={styles.sidebarLink}>{title}</Link>
     </li>
   );
 }
@@ -15,7 +15,7 @@ function SidebarEntry(props) {
 function Sidebar(props){
   return(
     <div className={styles.sidebar}>
-      <ul>
+      <ul className={styles.sidebarList}>
         {
           props.data.map(post => (
             <SidebarEntry post={post} key={post.slug} />

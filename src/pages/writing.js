@@ -12,7 +12,7 @@ function WritingEntry(props) {
   const { title, excerpt } = props.node;
 
   return (
-    <div>
+    <div className={styles.writingEntry}>
       <Title>{title}</Title>
       <div dangerouslySetInnerHTML={{ __html: excerpt }} />
     </div>
