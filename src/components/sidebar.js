@@ -4,10 +4,9 @@ import styles from "./sidebar.module.css"
 
 function SidebarEntry(props) {
   const { slug, title } = props.post;
-  // TODO figure out anchors
   return (
     <li>
-      <Link to={`/writing/#${slug}`} className={styles.sidebarLink}>{title}</Link>
+      <a href={`#${slug}`} className={styles.sidebarLink}>{title}</a>
     </li>
   );
 }

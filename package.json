@@ -19,7 +19,8 @@
     "react-dom": "^16.9.0",
     "typeface-cormorant-garamond": "0.0.72",
     "typeface-muli": "0.0.71",
-    "typeface-open-sans": "0.0.75"
+    "typeface-open-sans": "0.0.75",
+    "typeface-source-code-pro": "0.0.71"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

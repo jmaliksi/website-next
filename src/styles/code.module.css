@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.projects {
+  width: 100% - 250px;
+  float: left;
+  margin-left: 250px;
+  left: 0;
+}
+
+.thumb {
+  width: 250px;
+  height: 100%;
+  float: left;
+}
+
+.thumb img {
+  width: 100%;
+}
+
+.summaryCard {
+  margin: 20px;
+  width: 80%;
+}
+
+.summaryBody {
+  margin-left: 250px;
+  padding: 0 20px;
+  font-weight: 200;
+  text-align: justify;
+}
+
+.summaryTitle {
+  margin-left: 250px;
+  padding-left: 20px;
+  font-family: "source code pro", monospace;
+  font-weight: 400;
+}
