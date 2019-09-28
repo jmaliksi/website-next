@@ -55,7 +55,7 @@ export default ({data}) => {
 
 export const query = graphql`
   query {
-    allWordpressPost(filter: {categories: {elemMatch: {name: {eq: "writing"}}}}) {
+    allWordpressPost(filter: {categories: {elemMatch: {name: {eq: "writing"}}}}, sort: {fields: date, order: DESC}) {
       nodes {
         title
         slug
