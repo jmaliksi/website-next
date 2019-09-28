@@ -12,14 +12,17 @@ function SidebarEntry(props) {
 
 function Sidebar(props){
   return(
-    <div className={styles.sidebar}>
-      <ul className={styles.sidebarList}>
-        {
-          props.data.map(post => (
-            <SidebarEntry post={post} key={post.slug} />
-          ))
-        }
-      </ul>
+    <div>
+      <div className={styles.sidebar}>
+        <ul className={styles.sidebarList}>
+          {
+            props.data.map(post => (
+              <SidebarEntry post={post} key={post.slug} />
+            ))
+          }
+        </ul>
+      </div>
+      <div className={styles.content}>{props.children}</div>
     </div>
   );
 }

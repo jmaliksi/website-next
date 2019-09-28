@@ -1,10 +1,6 @@
 @charset "utf-8";
 
 .projects {
-  width: 100% - 250px;
-  float: left;
-  margin-left: 250px;
-  left: 0;
 }
 
 .thumb {

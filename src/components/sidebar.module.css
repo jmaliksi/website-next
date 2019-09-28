@@ -33,3 +33,9 @@
   -moz-box-shadow: -5px 0 5px -5px #222;
   font-weight: 700;
 }
+
+.content {
+  width: 100% - 250px;
+  float: left;
+  margin-left: 250px;
+}

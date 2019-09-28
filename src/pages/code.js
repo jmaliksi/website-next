@@ -21,12 +21,13 @@ function CodeSummary({ node }) {
 export default ({ data }) => {
   return (
     <Layout highlight="Code">
-      <Sidebar data={data.allWordpressPost.nodes} />
-      <div className={styles.projects}>{
-        data.allWordpressPost.nodes.map(node => (
-          <CodeSummary node={node} key={node.slug} />
-        ))
-      }</div>
+      <Sidebar data={data.allWordpressPost.nodes}>
+        <div className={styles.projects}>{
+          data.allWordpressPost.nodes.map(node => (
+            <CodeSummary node={node} key={node.slug} />
+          ))
+        }</div>
+      </Sidebar>
     </Layout>
   );
 }

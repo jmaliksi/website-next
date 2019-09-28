@@ -34,3 +34,11 @@
 .contactInfo a:hover {
   text-transform: uppercase;
 }
+
+h1 {
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+}

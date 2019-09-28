@@ -42,12 +42,13 @@ function WritingEntry(props) {
 export default ({data}) => {
   return (
     <Layout highlight="Words">
-      <Sidebar data={data.allWordpressPost.nodes} />
-      <div className={styles.excerpts}>{
-        data.allWordpressPost.nodes.map(node => (
-          <WritingEntry node={node} key={node.slug} />
-        ))
-      }</div>
+      <Sidebar data={data.allWordpressPost.nodes}>
+        <div className={styles.excerpts}>{
+          data.allWordpressPost.nodes.map(node => (
+            <WritingEntry node={node} key={node.slug} />
+          ))
+        }</div>
+      </Sidebar>
     </Layout>
   );
 }
