@@ -12,10 +12,32 @@
   font-family: "cormorant garamond", serif;
 }
 
+.title h1 {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
 .writingEntry {
   font-family: "open sans", serif;
   font-weight: 200;
-  margin: 20px 20px 20px 50px;
+  margin: 20px 20px 50px 50px;
   width: 80%;
   text-align: justify;
+}
+
+.writingExcerpt p {
+  margin: 0;
+}
+
+.tagContainer {
+  text-align: right;
+  margin: 0;
+}
+
+.tag {
+  font-size: x-small;
+  font-weight: 200;
+  font-style: italic;
+  
 }

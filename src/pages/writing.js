@@ -8,13 +8,33 @@ function Title({children}) {
   return <div className={styles.title}><h1>{children}</h1></div>;
 }
 
+function Tag(props) {
+  const { name, slug } = props;
+  // TODO figure out combined query params
+  return (
+    <a className={styles.tag} href={`?tag=${slug}`}>&nbsp;({name})&nbsp;</a>
+  );
+}
+
 function WritingEntry(props) {
-  const { title, excerpt, slug } = props.node;
+  const { title, excerpt, slug, tags } = props.node;
+
+  let tagComponent = <div className={styles.tagContainer}>&nbsp;</div>;
+  if (tags != null) {
+    tagComponent = (
+      <div className={styles.tagContainer}>{
+        tags.map(tag => (
+          <Tag slug={tag.slug} name={tag.name} key={tag.slug} />
+        ))
+      }</div>
+    );
+  }
 
   return (
     <div className={styles.writingEntry} id={slug}>
       <Title>{title}</Title>
-      <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+      {tagComponent}
+      <div className={styles.writingExcerpt} dangerouslySetInnerHTML={{ __html: excerpt }} />
     </div>
   );
 }
@@ -41,6 +61,7 @@ export const query = graphql`
         excerpt
         tags {
           name
+          slug
         }
       }
     }
