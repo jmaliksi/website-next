@@ -14,7 +14,7 @@ function HeaderLink(props) {
   const { to, name, highlight } = props;
 
   let className = styles.navLink;
-  if (highlight.toLowerCase() === name.toLowerCase()) {
+  if (highlight != null && highlight.toLowerCase() === name.toLowerCase()) {
     className = styles.activeNavLink;
   }
   return <Link to={to} className={className}>{name}</Link>;
