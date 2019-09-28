@@ -31,5 +31,5 @@
   box-shadow: -5px 0 5px -5px #222;
   -webkit-box-shadow: -5px 0 5px -5px #222;
   -moz-box-shadow: -5px 0 5px -5px #222;
-  text-transform: uppercase;
+  font-weight: 700;
 }
