@@ -25,7 +25,7 @@ module.exports = {
         perPage: 100,
         searchAndReplaceContentUrls: {
           sourceUrl: "https://jmaliksitest.wordpress.com",
-          replacementUrl: "https://localhost:8000",
+          replacementUrl: "/",
         },
         concurrentRequests: 10,
         includedRoutes: [

@@ -31,8 +31,6 @@ export default (props) => (
       <div className={styles.navigation}>
         <HeaderLink to="/#about" name="about" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/art" name="art" highlight={props.highlight} />
-        <Divider />
         <HeaderLink to="/code" name="code" highlight={props.highlight} />
         <Divider />
         <HeaderLink to="/writing" name="words" highlight={props.highlight} />

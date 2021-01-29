@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
 import styles from "../styles/writing.module.css"
+import ReactHtmlParser from "react-html-parser"
 
 function Title({children}) {
   return <div className={styles.title}><h1>{children}</h1></div>;
@@ -16,27 +17,54 @@ function Tag(props) {
   );
 }
 
-function WritingEntry(props) {
-  const { title, excerpt, slug, tags } = props.node;
+class WritingEntry extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false };
+    this.content = ReactHtmlParser(props.node.content); 
+    this.slug = props.node.slug;
+    this.title = props.node.title;
+    this.tags = props.node.tags;
 
-  let tagComponent = <div className={styles.tagContainer}>&nbsp;</div>;
-  if (tags != null) {
-    tagComponent = (
+    this.excerpt = ReactHtmlParser(props.node.excerpt)[0].props.children[0];
+  }
+
+  toggle = () => {
+    this.setState({expanded: !this.state.expanded});
+  }
+
+  tagComponent() {
+    if (!this.tags) {
+      return <div className={styles.tagContainer}>&nbsp;</div>;
+    }
+    return (
       <div className={styles.tagContainer}>{
-        tags.map(tag => (
+        this.tags.map(tag => (
           <Tag slug={tag.slug} name={tag.name} key={tag.slug} />
         ))
       }</div>
     );
   }
 
-  return (
-    <div className={styles.writingEntry} id={slug}>
-      <Title>{title}</Title>
-      {tagComponent}
-      <div className={styles.writingExcerpt} dangerouslySetInnerHTML={{ __html: excerpt }} />
-    </div>
-  );
+  words() {
+    if (this.state.expanded) {
+      return this.content;
+    }
+    return this.excerpt;
+  }
+
+  render() {
+    return (
+      <div className={styles.writingEntry} id={this.slug}>
+        <Title>{this.title}</Title>
+        {this.tagComponent()}
+        <div className={styles.writingExcerpt}>
+          <p>{this.words()}</p>
+          <a onClick={this.toggle}>{this.state.expanded ? 'less' : 'more'}</a>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default ({data}) => {
@@ -60,6 +88,7 @@ export const query = graphql`
         title
         slug
         excerpt
+        content
         tags {
           name
           slug

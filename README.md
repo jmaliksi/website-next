@@ -8,4 +8,4 @@ update content
 1. gatsby build
 
 publish
-1. `npm deploy`
+1. `npm run deploy`
