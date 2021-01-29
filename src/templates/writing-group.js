@@ -11,7 +11,7 @@ export default ({data}) => {
       <Sidebar data={data.allWordpressPost.nodes}>
         <div className={styles.excerpts}>{
           data.allWordpressPost.nodes.map(node => (
-            <WritingEntry node={node} key={node.slug} />
+            <WritingEntry node={node} key={node.slug} expanded />
           ))
         }</div>
       </Sidebar>
@@ -20,8 +20,26 @@ export default ({data}) => {
 }
 
 export const query = graphql`
-  query {
-    allWordpressPost(filter: {categories: {elemMatch: {name: {eq: "writing"}}}}, sort: {fields: date, order: DESC}) {
+  query($slug: String!) {
+    allWordpressPost(
+      filter: {
+        categories: {
+          elemMatch: {
+            name: {
+              eq: "writing"
+            }
+          }
+        },
+        tags: {
+          elemMatch: {
+            slug: {
+              eq: $slug
+            }
+          }
+        }
+      },
+      sort: {fields: date, order: ASC}
+    ) {
       nodes {
         title
         slug

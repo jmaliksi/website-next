@@ -33,7 +33,7 @@ export default (props) => (
         <Divider />
         <HeaderLink to="/code" name="code" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/writing" name="words" highlight={props.highlight} />
+        <HeaderLink to="/writing" name="writing" highlight={props.highlight} />
       </div>
     </div>
   </div>

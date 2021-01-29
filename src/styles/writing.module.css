@@ -23,6 +23,7 @@
 
 
 .tagContainer {
+  float: right;
   text-align: right;
   margin: 0;
 }
@@ -31,5 +32,11 @@
   font-size: x-small;
   font-weight: 200;
   font-style: italic;
-  
+}
+
+.date {
+  font-size: small;
+  font-weight: 200;
+  font-style: italic;
+  margin-block-end: 0;
 }

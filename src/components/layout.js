@@ -8,7 +8,7 @@ function Content({children}) {
 function Footer() {
   return (
     <div style={{ fontWeight: `100`, width: `100%`, textAlign: `center`, fontSize: `x-small` }}>
-      © Joseph Maliksi 2019
+      © Joseph Maliksi 2019–{new Date().getFullYear()}
     </div>
   );
 }
