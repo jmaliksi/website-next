@@ -12,7 +12,8 @@
 
 .sidebarList {
   list-style-type: none;
-  margin-left: 20px;
+  margin-left: 1em;
+  margin-right: 1em;
   padding-left: 0;
 }
 
@@ -23,7 +24,7 @@
 .sidebarLink {
   font-size: small;
   text-decoration: none;
-  padding: 5px;
+  /*padding: 5px;*/
   color: black;
 }
 
@@ -38,4 +39,8 @@
   width: 100% - 250px;
   float: left;
   margin-left: 250px;
+}
+
+.thumb {
+  width: 100%;
 }
