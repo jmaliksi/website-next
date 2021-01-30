@@ -45,7 +45,7 @@ class HeaderTitle extends React.Component {
   render() {
     return (
       <div className={styles.headerTitle}>
-        <h1>{fafo("joe maliksi")}</h1>
+        <h1>{fafo(this.title ?? "joe maliksi")}</h1>
       </div>
     );
   }

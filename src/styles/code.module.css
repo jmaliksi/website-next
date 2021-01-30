@@ -54,6 +54,10 @@
   text-align: right;
 }
 
+h2 {
+  font-weight: 100;
+}
+
 
 @media only screen and (min-width: 600px) {
   .thumb {

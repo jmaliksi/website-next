@@ -39,6 +39,20 @@
   font-style: italic;
 }
 
+.tag:hover {
+  background: black;
+  color: white;
+}
+
+.expander {
+  font-size: small;
+}
+
+.expander:hover {
+  background: black;
+  color: white;
+}
+
 .date {
   font-size: small;
   font-weight: 200;

@@ -36,9 +36,9 @@ export class WritingEntry extends React.Component {
   }
 
   tagComponent() {
-    //<p className={styles.date}>{this.date}</p>
     return (
       <div className={styles.tagContainer}>
+        <p className={styles.date}>{this.date}</p>
         {this.tags &&
           this.tags.map(tag => (
             <Tag slug={tag.slug} name={tag.name} key={tag.slug} />
@@ -64,7 +64,7 @@ export class WritingEntry extends React.Component {
         </div>
         <div className={styles.writingExcerpt}>
           {this.words()}
-          <a onClick={this.toggle} href={`#${this.slug}`}>
+          <a className={styles.expander} onClick={this.toggle} href={`#${this.slug}`}>
             {this.state.expanded ? 'collapse' : 'expand'}
           </a>
         </div>

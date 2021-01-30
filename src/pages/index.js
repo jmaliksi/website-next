@@ -30,7 +30,7 @@ function ContactInfo() {
 }
 
 export default ({data}) => (
-  <Layout highlight="About" title="About: joe maliksi">
+  <Layout highlight="About">
     <div className={styles.content}>
       <h1>hi</h1>
       <h2 id="about">about</h2>

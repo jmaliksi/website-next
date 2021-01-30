@@ -7,15 +7,8 @@ import { WritingEntry } from "../components/writing-components.js"
 
 export default ({data, pageContext}) => {
   const nodes = data.allWordpressPost.nodes;
-  const title = (
-    <div>
-      <a href="/writing">back</a>
-      <p>Reading:</p>
-      <h1>{pageContext.tagName}</h1>
-    </div>
-  );
   return (
-    <Layout highlight="Writing">
+    <Layout highlight="Writing" title={`Reading: ${pageContext.tagName}`}>
       <div className={styles.excerpts}>{
         nodes.map(node => (
           <WritingEntry node={node} key={node.slug} expanded />
