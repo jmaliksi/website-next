@@ -1,8 +1,12 @@
 @charset "utf-8";
 
 .content {
-  width: 90%;
-  margin: auto;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 1em 1em 0 black;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 .contactSection {

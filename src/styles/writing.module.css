@@ -18,6 +18,12 @@
   font-weight: 200;
   margin: 4em;
   text-align: justify;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 1em 1em 0 black;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 

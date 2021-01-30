@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./header.module.css"
+import RNG from "rng"
 
 function HomeLink(props) {
   return (
@@ -17,7 +18,7 @@ function HeaderLink(props) {
   if (highlight != null && highlight.toLowerCase() === name.toLowerCase()) {
     className = styles.activeNavLink;
   }
-  return <Link to={to} className={className}>{name}</Link>;
+  return <Link to={to} className={className}>{fafo(name)}</Link>;
 }
 
 function Divider() {
@@ -25,10 +26,9 @@ function Divider() {
 }
 
 function fafo(word) {
-  let inc = 0;
+  let rand = new RNG.MT(word);
   return Array.prototype.map.call(word, c => {
-    inc += .3 + Math.random() * .2;
-    return <span style={{position: "relative", top: `${Math.random() * .1}em`, "font-size": `${Math.random() * .3 + .85}em`}}>{c}</span>;
+    return <span style={{position: "relative", top: `${rand.random() * .1}em`, fontSize: `${rand.random() * .3 + .85}em`}}>{c}</span>;
   });
 }
 

@@ -20,6 +20,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-html-parser": "^2.0.2",
+    "rng": "^0.2.2",
     "typeface-cormorant-garamond": "0.0.72",
     "typeface-muli": "0.0.71",
     "typeface-open-sans": "0.0.75",

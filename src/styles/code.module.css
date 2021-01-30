@@ -14,7 +14,13 @@
 }
 
 .summaryCard {
-  margin: 20px;
+  padding: 1em;
+  margin: 4em;
+  box-shadow: 1em 1em 0 black;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  background-color: white;
 }
 
 .summaryBody {
