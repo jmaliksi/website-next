@@ -16,14 +16,14 @@
 .writingEntry {
   font-family: "open sans", serif;
   font-weight: 200;
-  margin: 4em;
   text-align: justify;
   background-color: white;
   padding: 1em;
-  box-shadow: 1em 1em 0 black;
   border-style: solid;
   border-color: black;
   border-width: 2px;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 
@@ -44,4 +44,10 @@
   font-weight: 200;
   font-style: italic;
   margin-block-end: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .writingEntry {
+    box-shadow: 1em 1em 0 black;
+  }
 }

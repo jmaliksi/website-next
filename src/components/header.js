@@ -18,7 +18,7 @@ function HeaderLink(props) {
   if (highlight != null && highlight.toLowerCase() === name.toLowerCase()) {
     className = styles.activeNavLink;
   }
-  return <Link to={to} className={className}>{fafo(name)}</Link>;
+  return <Link to={to} className={className} key={name}>{fafo(name)}</Link>;
 }
 
 function Divider() {
@@ -27,8 +27,10 @@ function Divider() {
 
 function fafo(word) {
   let rand = new RNG.MT(word);
+  let inc = 0;
   return Array.prototype.map.call(word, c => {
-    return <span style={{position: "relative", top: `${rand.random() * .1}em`, fontSize: `${rand.random() * .3 + .85}em`}}>{c}</span>;
+    inc++;
+    return <span style={{position: "relative", top: `${rand.random() * .1}em`, fontSize: `${rand.random() * .3 + .85}em`}} key={inc}>{c}</span>;
   });
 }
 
@@ -55,7 +57,7 @@ export default (props) => (
       <div className={styles.navigation}>
         <HeaderLink to="/" name="about" highlight={props.highlight} />
         <Divider />
-        <HeaderLink to="/code" name="code" highlight={props.highlight} />
+        <HeaderLink to="/code" name="projects" highlight={props.highlight} />
         <Divider />
         <HeaderLink to="/writing" name="writing" highlight={props.highlight} />
       </div>

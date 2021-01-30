@@ -4,36 +4,60 @@
 }
 
 .thumb {
+  /*
   width: 250px;
   height: 100%;
   float: left;
+  */
+  height: 100%;
+  flex-grow: 2;
 }
 
-.thumb img {
+.thumbImg {
   width: 100%;
 }
 
 .summaryCard {
   padding: 1em;
-  margin: 4em;
-  box-shadow: 1em 1em 0 black;
   border-style: solid;
   border-color: black;
   border-width: 2px;
   background-color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .summaryBody {
+  /*
   margin-left: 250px;
   padding: 0 20px;
   font-weight: 200;
   text-align: justify;
+  */
 }
 
 .summaryTitle {
-  margin-left: 250px;
-  padding-left: 20px;
-  font-family: "source code pro", monospace;
-  font-weight: 300;
-  font-size: normal;
+  align-self: flex-end;
+  margin: 0;
+  flex-grow: 1;
+}
+
+@media only screen and (min-width: 600px) {
+  .thumb {
+    max-width: 38%;
+  }
+
+  .summaryCard {
+    box-shadow: 1em 1em 0 black;
+  }
+
+  .summaryTitle {
+    text-align: right;
+  }
 }
