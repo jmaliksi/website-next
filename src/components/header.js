@@ -31,7 +31,7 @@ function fafo(word) {
   let inc = 0;
   return Array.prototype.map.call(word, c => {
     inc++;
-    return <span style={{position: "relative", top: `${rand.random() * .1}em`, fontSize: `${rand.random() * .3 + .85}em`}} key={inc}>{c}</span>;
+    return <span style={{position: "relative", top: `${rand.random() * .05}em`, fontSize: `${rand.random() * .2 + .9}em`}} key={inc}>{c}</span>;
   });
 }
 
