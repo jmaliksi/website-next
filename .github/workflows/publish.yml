@@ -30,3 +30,8 @@ jobs:
         run: |
           npm install
           npm run deploy
+        env:
+          TOKEN: ${{secrets.GH_TOKEN}}
+          WORDPRESS_CLIENT_SECRET: ${{secrets.WORDPRESS_CLIENT_SECRET}}
+          WORDPRESS_USER: ${{secrets.WORDPRESS_USER}}
+          WORDPRESS_PASSWORD: ${{secrets.WORDPRESS_PASSWORD}}
