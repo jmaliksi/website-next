@@ -52,6 +52,7 @@
 
 .dateTitle {
   text-align: right;
+  font-weight: 100;
 }
 
 h2 {
@@ -61,7 +62,7 @@ h2 {
 
 @media only screen and (min-width: 600px) {
   .thumb {
-    max-width: 38%;
+    max-width: 400px;
   }
 
   .summaryCard {
