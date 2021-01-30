@@ -26,6 +26,7 @@ function Divider() {
 }
 
 function fafo(word) {
+  // this isn't seeding properly due to string not converting to unique int
   let rand = new RNG.MT(word);
   let inc = 0;
   return Array.prototype.map.call(word, c => {
