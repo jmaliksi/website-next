@@ -24,12 +24,36 @@ function Divider() {
   return <span>&nbsp;|&nbsp;</span>
 }
 
+function fafo(word) {
+  let inc = 0;
+  return Array.prototype.map.call(word, c => {
+    inc += .3 + Math.random() * .2;
+    return <span style={{position: "relative", top: `${Math.random() * .1}em`, "font-size": `${Math.random() * .3 + .85}em`}}>{c}</span>;
+  });
+}
+
+class HeaderTitle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false };
+    this.title = props.title;
+  }
+
+  render() {
+    return (
+      <div className={styles.headerTitle}>
+        <h1>{fafo("joe maliksi")}</h1>
+      </div>
+    );
+  }
+}
+
 export default (props) => (
   <div className={styles.navbar}>
+    <HeaderTitle title={props.title}/>
     <div className={styles.navContainer}>
-      <HomeLink />
       <div className={styles.navigation}>
-        <HeaderLink to="/#about" name="about" highlight={props.highlight} />
+        <HeaderLink to="/" name="about" highlight={props.highlight} />
         <Divider />
         <HeaderLink to="/code" name="code" highlight={props.highlight} />
         <Divider />

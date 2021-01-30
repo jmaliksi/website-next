@@ -25,6 +25,10 @@ export class WritingEntry extends React.Component {
     this.date = props.node.date;
 
     this.excerpt = ReactHtmlParser(props.node.excerpt)[0].props.children[0];
+
+    if (props.expanded) {
+      this.state.expanded = true;
+    }
   }
 
   toggle = () => {
@@ -32,9 +36,9 @@ export class WritingEntry extends React.Component {
   }
 
   tagComponent() {
+    //<p className={styles.date}>{this.date}</p>
     return (
       <div className={styles.tagContainer}>
-        <p className={styles.date}>{this.date}</p>
         {this.tags &&
           this.tags.map(tag => (
             <Tag slug={tag.slug} name={tag.name} key={tag.slug} />
@@ -48,7 +52,7 @@ export class WritingEntry extends React.Component {
     if (this.state.expanded) {
       return this.content;
     }
-    return this.excerpt;
+    return <p>{this.excerpt}</p>;
   }
 
   render() {
@@ -59,9 +63,9 @@ export class WritingEntry extends React.Component {
           <Title>{this.title}</Title>
         </div>
         <div className={styles.writingExcerpt}>
-          <p>{this.words()}</p>
+          {this.words()}
           <a onClick={this.toggle} href={`#${this.slug}`}>
-            {this.state.expanded ? 'less' : 'more'}
+            {this.state.expanded ? 'collapse' : 'expand'}
           </a>
         </div>
       </div>

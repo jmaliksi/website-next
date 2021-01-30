@@ -5,16 +5,22 @@ import Layout from "../components/layout"
 import styles from "../styles/writing.module.css"
 import { WritingEntry } from "../components/writing-components.js"
 
-export default ({data}) => {
+export default ({data, pageContext}) => {
+  const nodes = data.allWordpressPost.nodes;
+  const title = (
+    <div>
+      <a href="/writing">back</a>
+      <p>Reading:</p>
+      <h1>{pageContext.tagName}</h1>
+    </div>
+  );
   return (
     <Layout highlight="Writing">
-      <Sidebar data={data.allWordpressPost.nodes}>
-        <div className={styles.excerpts}>{
-          data.allWordpressPost.nodes.map(node => (
-            <WritingEntry node={node} key={node.slug} expanded />
-          ))
-        }</div>
-      </Sidebar>
+      <div className={styles.excerpts}>{
+        nodes.map(node => (
+          <WritingEntry node={node} key={node.slug} expanded />
+        ))
+      }</div>
     </Layout>
   );
 }

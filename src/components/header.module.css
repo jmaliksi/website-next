@@ -52,3 +52,17 @@
 
 .navLink {
 }
+
+.headerTitle {
+  position: absolute;
+  top: 0;
+  left: 1em;
+  height: 100%;
+  z-index: 10;
+}
+
+.headerTitle h1 {
+  margin: 0;
+  font-family: "source code pro", monospace;
+  letter-spacing: -.15em;
+}

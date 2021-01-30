@@ -8,13 +8,11 @@ import { WritingEntry } from "../components/writing-components.js"
 export default ({data}) => {
   return (
     <Layout highlight="Writing">
-      <Sidebar data={data.allWordpressPost.nodes}>
-        <div className={styles.excerpts}>{
-          data.allWordpressPost.nodes.map(node => (
-            <WritingEntry node={node} key={node.slug} />
-          ))
-        }</div>
-      </Sidebar>
+      <div className={styles.excerpts}>{
+        data.allWordpressPost.nodes.map(node => (
+          <WritingEntry node={node} key={node.slug} />
+        ))
+      }</div>
     </Layout>
   );
 }

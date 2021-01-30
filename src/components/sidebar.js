@@ -19,8 +19,9 @@ function SidebarEntry(props) {
 
 function Sidebar(props){
   return(
-    <div>
+    <div className={styles.display}>
       <div className={styles.sidebar}>
+        {props.title}
         <ul className={styles.sidebarList}>
           {
             props.data.map(post => (

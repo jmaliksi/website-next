@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
     query {
       allWordpressTag {
         nodes {
+          name
           slug
         }
       }
@@ -19,7 +20,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `writing/${entry.slug}`,
       component: writingGroup,
       context: {
-        slug: entry.slug
+        slug: entry.slug,
+        tagName: entry.name
       }
     });
   });

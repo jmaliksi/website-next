@@ -1,21 +1,22 @@
 import React from "react"
 import Header from "./header"
+import styles from "./layout.module.css"
 
 function Content({children}) {
-  return <div style={{ marginTop: `50px` }}>{children}</div>;
+  return <div className={styles.content}>{children}</div>;
 }
 
 function Footer() {
   return (
-    <div style={{ fontWeight: `100`, width: `100%`, textAlign: `center`, fontSize: `x-small` }}>
+    <div className={styles.footer}>
       © Joseph Maliksi 2019–{new Date().getFullYear()}
     </div>
   );
 }
 
-export default ({highlight, children}) => (
+export default ({highlight, children, title}) => (
   <div>
-    <Header highlight={highlight} />
+    <Header highlight={highlight} title={title} />
     <Content>{children}</Content>
     <Footer />
   </div>
