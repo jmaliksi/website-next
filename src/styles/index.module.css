@@ -85,10 +85,9 @@ figcaption {
   -ms-transform: translate(0, -50%);*/
   top: 0;
   opacity: 0;
-  width: 200px;
+  width: 100%;
   transition: .2s ease;
   cursor: pointer;
-  display: none;
 }
 
 .statdiv:hover {
@@ -126,9 +125,5 @@ figcaption {
 @media only screen and (min-width: 600px) {
   .characterSheet {
     width: 200px;
-  }
-
-  .statdiv {
-    display: block;
   }
 }
