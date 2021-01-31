@@ -16,5 +16,9 @@ a {
   color: #555555;
   text-decoration: none;
   font-weight: 600;
+  transition: .1s ease;
 }
 
+a:hover {
+  transition: .1s ease;
+}
