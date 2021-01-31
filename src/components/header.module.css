@@ -59,7 +59,7 @@
 .headerTitle {
   position: absolute;
   top: 0;
-  left: 1em;
+  left: .5em;
   height: 100%;
   z-index: 10;
 }
@@ -68,11 +68,21 @@
   margin: 0;
   font-family: "source code pro", monospace;
   letter-spacing: -.15em;
+  font-size: 1.5em;
+  align-self: bottom;
 }
 
 @media only screen and (min-width: 600px) {
   .navigation {
     text-align: center;
     font-size: 1em;
+  }
+
+  .headerTitle h1 {
+    font-size: 2em;
+  }
+
+  .headerTitle {
+    left: 1em;
   }
 }
