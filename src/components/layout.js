@@ -10,7 +10,6 @@ function BackgroundSvg({color, seed, points, border}) {
   const numPts = points;
 
   let pts = [];
-  let lastDir = rand.range(0, 4);
 
   for (var i = 0; i < numPts; i++) {
     let dir = rand.range(0, 4);
@@ -39,6 +38,8 @@ function BackgroundSvg({color, seed, points, border}) {
           sizeY,// + rand.random() * sizeY
         ]);
         break;
+      default:
+        break;
     }
   }
   return (
@@ -65,7 +66,7 @@ function Footer() {
 
 export default ({highlight, children, title}) => (
   <div>
-    <BackgroundSvg color="cyan" border="black" seed="57195" points="25"/>
+    <BackgroundSvg color="cyan" border="black" seed="0" points="25"/>
     <Header highlight={highlight} title={title} />
     <Content>{children}</Content>
     <Footer />

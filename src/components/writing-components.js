@@ -20,7 +20,7 @@ export class WritingEntry extends React.Component {
     this.state = { expanded: false };
     this.content = ReactHtmlParser(props.node.content); 
     this.slug = props.node.slug;
-    this.title = props.node.title;
+    this.title = ReactHtmlParser(props.node.title);
     this.tags = props.node.tags;
     this.date = props.node.date;
 

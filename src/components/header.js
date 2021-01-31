@@ -3,14 +3,6 @@ import { Link } from "gatsby"
 import styles from "./header.module.css"
 import RNG from "rng"
 
-function HomeLink(props) {
-  return (
-    <div className={styles.homeLink}>
-      <Link to="/">joe maliksi</Link>
-    </div>
-  );
-}
-
 function HeaderLink(props) {
   const { to, name, highlight } = props;
 

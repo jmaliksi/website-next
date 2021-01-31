@@ -67,3 +67,7 @@
     -moz-box-shadow: 1em 1em 0 black;
   }
 }
+
+figure {
+  margin-block-end: 0;
+}

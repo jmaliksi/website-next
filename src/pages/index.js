@@ -17,7 +17,7 @@ class CharacterSheet extends React.Component {
 
   pfp() {
     return (
-        <img src="https://jmaliksitest.files.wordpress.com/2021/01/a0a37a8d-3390-46b9-83f2-9b520987c568_1_105_c.jpeg"/>
+        <img src="https://jmaliksitest.files.wordpress.com/2021/01/a0a37a8d-3390-46b9-83f2-9b520987c568_1_105_c.jpeg" alt="bulbasaur in a suit"/>
     );
   }
 
