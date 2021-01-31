@@ -51,10 +51,30 @@ strong {
   font-weight: 600;
 }
 
-.wp-block-columns {
-  display: flex;
-  flex-direction: row;
+figure {
+  margin: 0;
+  max-width: 200px;
 }
 
-.wp-block-column {
+figure>img {
+  max-width: 200px;
+}
+
+figcaption {
+  font-size: x-small;
+  text-align: center;
+}
+
+.characterSheet {
+  float: right;
+  max-width: 200px;
+}
+
+.characterSheet>ul {
+  font-size: small;
+  list-style: none;
+}
+
+.about {
+  text-align: left;
 }
