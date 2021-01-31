@@ -17,6 +17,10 @@
 
 .thumbImg {
   width: 100%;
+  border: 2px solid white;
+  box-shadow: .5em .5em 0 black;
+  -webkit-box-shadow: .5em .5em 0 black;
+  -moz-box-shadow: .5em .5em 0 black;
 }
 
 .summaryCard {
