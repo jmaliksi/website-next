@@ -7,45 +7,57 @@ import styles from "../styles/index.module.css"
 class CharacterSheet extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showImg: true, page: 0};
-    this.pages = 2;
+    this.state = {showSts: false, page: 0};
+    this.pageCount = 2;
     this.stats = [];
     React.Children.forEach(props.children, c => {
       this.stats.push(c.props.children);
     });
   }
 
-  figure() {
+  pfp() {
     return (
-      <figure>
         <img src="https://jmaliksitest.files.wordpress.com/2021/01/a0a37a8d-3390-46b9-83f2-9b520987c568_1_105_c.jpeg"/>
-        <figcaption>
-          pfp by <a href="https://twitter.com/ouroborose">Rose Peng</a>
-        </figcaption>
-      </figure>
     );
   }
 
   renderStats() {
+    let pageLength = this.stats.length / this.pageCount;
     return (
-      <ul>
-      {this.stats.map(stat => {return <li key={stat}>{stat}</li>})}
-      </ul>
+      <div className={styles.statdiv}>
+        <ul className={styles.statlist}>
+        {this.stats.slice(pageLength * this.state.page, pageLength + pageLength * this.state.page).map(stat => {
+          return <li key={stat}>{stat}</li>
+        })}
+        </ul>
+      </div>
     );
   }
 
   showStats = () => {
-    this.setState({showImg: false});
+    this.setState({showSts: true});
   }
 
   hideStats = () => {
-    this.setState({showImg: true});
+    this.setState({showSts: false});
+  }
+
+  nextPage = () => {
+    this.setState({page: (this.state.page + 1) % this.pageCount});
   }
 
   render = () => {
     return (
-      <div className={styles.characterSheet} onMouseEnter={this.showStats} onMouseLeave={this.hideStats}>
-        {this.state.showImg ? this.figure() : this.renderStats()}
+      <div className={styles.characterSheet} onMouseEnter={this.showStats} onMouseLeave={this.hideStats} onMouseDown={this.nextPage}>
+        <figure>
+          <div className={styles.pfp}>
+            {this.pfp()}
+            {this.renderStats()}
+          </div>
+          <figcaption>
+            pfp by <a href="https://twitter.com/ouroborose">Rose Peng</a>
+          </figcaption>
+        </figure>
       </div>
     );
   }

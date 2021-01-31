@@ -36,7 +36,9 @@
 }
 
 .contactInfo a:hover {
-  text-transform: uppercase;
+  background: black;
+  color: white;
+  padding: 2px;
 }
 
 h1 {
@@ -54,13 +56,20 @@ strong {
 figure {
   margin: 0;
   max-width: 200px;
+  background: white;
+  box-shadow: .2em .2em 0 black;
+  -webkit-box-shadow: .2em .2em 0 black;
+  -moz-box-shadow: .2em .2em 0 black;
+  border: 1px black solid;
 }
 
-figure>img {
-  max-width: 200px;
+.pfp>img {
+  width: 100%;
+  display: block;
 }
 
 figcaption {
+  margin-top: 2em;
   font-size: x-small;
   text-align: center;
 }
@@ -70,11 +79,43 @@ figcaption {
   max-width: 200px;
 }
 
-.characterSheet>ul {
+.statdiv {
+  position: absolute;
+  /*transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);*/
+  top: 0;
+  opacity: 0;
+  width: 200px;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.statdiv:hover {
+  width: 100%;
+  opacity: 1;
+  /*background-color: rgba(255, 255, 255, .9);*/
+  background-image: linear-gradient(
+    70deg,
+    rgba(255, 255, 255, .9),
+    rgba(255, 255, 255, .9),
+    rgba(255, 255, 255, .9),
+    rgba(255, 255, 255, .9),
+    rgba(255, 255, 255, .9),
+    rgba(100, 100, 100, .9));
+}
+
+.statlist {
   font-size: small;
   list-style: none;
 }
 
+.statlist>li {
+}
+
 .about {
   text-align: left;
+}
+
+.pfp {
+  position: relative;
 }
