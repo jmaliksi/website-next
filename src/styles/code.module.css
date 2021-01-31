@@ -48,6 +48,7 @@
   align-self: flex-end;
   margin: 0;
   flex-grow: 1;
+  font-family: "cormorant garamond", serif;
 }
 
 .dateTitle {
@@ -73,4 +74,10 @@ h2 {
 
   .dateTitle {
   }
+}
+
+.summaryBody a:hover {
+  background: black;
+  color: white;
+  padding: 2px;
 }
