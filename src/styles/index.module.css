@@ -76,7 +76,7 @@ figcaption {
 
 .characterSheet {
   float: right;
-  max-width: 200px;
+  width: 150px;
 }
 
 .statdiv {
@@ -88,6 +88,7 @@ figcaption {
   width: 200px;
   transition: .2s ease;
   cursor: pointer;
+  display: none;
 }
 
 .statdiv:hover {
@@ -96,17 +97,18 @@ figcaption {
   /*background-color: rgba(255, 255, 255, .9);*/
   background-image: linear-gradient(
     70deg,
-    rgba(255, 255, 255, .9),
-    rgba(255, 255, 255, .9),
-    rgba(255, 255, 255, .9),
-    rgba(255, 255, 255, .9),
-    rgba(255, 255, 255, .9),
-    rgba(100, 100, 100, .9));
+    rgba(255, 255, 255, .95),
+    rgba(255, 255, 255, .95),
+    rgba(255, 255, 255, .95),
+    rgba(255, 255, 255, .95),
+    rgba(255, 255, 255, .95),
+    rgba(100, 100, 100, .95));
 }
 
 .statlist {
   font-size: small;
   list-style: none;
+  font-family: "cormorant garamond", serif;
 }
 
 .statlist>li {
@@ -118,4 +120,15 @@ figcaption {
 
 .pfp {
   position: relative;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .characterSheet {
+    width: 200px;
+  }
+
+  .statdiv {
+    display: block;
+  }
 }
