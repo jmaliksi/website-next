@@ -2,16 +2,19 @@ import React from "react"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import styles from "../styles/code.module.css"
+import ReactHtmlParser from "react-html-parser"
 
 function CodeSummary({ node }) {
   const { title, slug, content, jetpack_featured_media_url, date } = node;
   return (
     <div id={slug} className={styles.summaryCard}>
-      <div className={styles.thumb}>
-        <img className={styles.thumbImg} alt={slug} src={jetpack_featured_media_url} />
-      </div>
+      { jetpack_featured_media_url &&
+        <div className={styles.thumb}>
+          <img className={styles.thumbImg} alt={slug} src={jetpack_featured_media_url} />
+        </div>
+      }
       <div className={styles.titleRow}>
-        <h1 className={styles.summaryTitle}>{title}</h1>
+        <h1 className={styles.summaryTitle}>{ReactHtmlParser(title)}</h1>
         <h2 className={styles.summaryTitle + " " + styles.dateTitle}>c. {date}</h2>
       </div>
       <div className={styles.summaryBody}>
