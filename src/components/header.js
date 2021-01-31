@@ -18,20 +18,27 @@ function HeaderLink(props) {
   if (highlight != null && highlight.toLowerCase() === name.toLowerCase()) {
     className = styles.activeNavLink;
   }
-  return <Link to={to} className={className} key={name}>{fafo(name)}</Link>;
+  return <Link to={to} className={className} key={name}>{(name)}</Link>;
 }
 
 function Divider() {
   return <span>&nbsp;|&nbsp;</span>
 }
 
-function fafo(word) {
+function fafo(word, baseSpacing) {
   // this isn't seeding properly due to string not converting to unique int
-  let rand = new RNG.MT(word);
+  let rand = new RNG.MT(word.charCodeAt(0));
   let inc = 0;
   return Array.prototype.map.call(word, c => {
     inc++;
-    return <span style={{position: "relative", top: `${rand.random() * .05}em`, fontSize: `${rand.random() * .2 + .9}em`}} key={inc}>{c}</span>;
+    let style = {
+      fontSize: `${rand.random() * .4 + .8}em`,
+    };
+    if (rand.random() < .2) {
+      style.verticalAlign = "bottom";
+    }
+    //return <span style={{position: "relative", top: `${rand.random() * .0}em`, fontSize: `${rand.random() * .2 + .9}em`}} key={inc}>{c}</span>;
+    return <span style={style} key={inc}>{c}</span>;
   });
 }
 

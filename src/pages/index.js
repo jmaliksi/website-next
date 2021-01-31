@@ -3,6 +3,35 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styles from "../styles/index.module.css"
 
+class Email extends React.Component {
+  constructor(props) {
+    super(props);
+    const { name, domain } = props;
+    this.displayToken = String.fromCharCode(65312);
+    this.cleanEmail = `${name}@${domain}`;
+    this.email = Array.prototype.map.call(
+      `${name}${this.displayToken}${domain}`,
+      c => {return c + String.fromCharCode(8291)}
+    );
+    this.state = {clean: false};
+  }
+
+  onMouseEnter = () => {
+    this.setState({clean: true});
+  }
+
+  render() {
+    if (!this.state.clean) {
+      return <a
+        href="mailto:gotcha@wobscale.lol');DROP TABLE emails;--"
+        onMouseEnter={this.onMouseEnter}>{this.email}</a>;
+    }
+    return (
+      <a href={`mailto:${this.cleanEmail}`}>{this.cleanEmail}</a>
+    );
+  }
+}
+
 function ContactInfo() {
   return (
     <div>
@@ -11,7 +40,7 @@ function ContactInfo() {
         <div className={styles.contactLabel}>come talk</div>
         <div className={styles.contactInfo}>
           <ul>
-            <li>joe [dot] maliksi [at] gmail [dot] com</li>
+            <li><Email name="joe" domain="wobscale.lol"></Email></li>
           </ul>
         </div>
       </div>

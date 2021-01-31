@@ -49,9 +49,11 @@
 .activeNavLink {
   color: white;
   background-color: black;
+  letter-spacing: -.03em;
 }
 
 .navLink {
+  letter-spacing: -.03em;
 }
 
 .headerTitle {

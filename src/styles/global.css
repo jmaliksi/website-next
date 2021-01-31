@@ -17,3 +17,24 @@ a {
   text-decoration: none;
   font-weight: 600;
 }
+
+.wp-block-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.wp-block-column {
+  margin: 1em;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: x-small;
+}
+
+.has-small-font-size {
+  font-size: small;
+}
