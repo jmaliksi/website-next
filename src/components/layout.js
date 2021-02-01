@@ -67,7 +67,7 @@ function Footer() {
 
 export default ({highlight, children, title}) => (
   <>
-    <Helmet>
+    <Helmet defer={false}>
       <title>stuff by joe maliksi</title>
       <meta name="description" content="just a bunch of stuff." />
 

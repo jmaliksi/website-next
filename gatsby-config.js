@@ -34,6 +34,7 @@ module.exports = {
           "**/tags",
         ]
       }
-    }
+    },
+    `gatsby-plugin-react-helmet`
   ]
 }

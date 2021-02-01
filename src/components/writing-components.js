@@ -5,7 +5,7 @@ import classnames from "classnames"
 import scrollToComponent from 'react-scroll-to-component'
 
 export let Title = ({onClick, children}) => {
-  return <div className={styles.title} onClick={onClick}><h1>{children}</h1></div>;
+  return <div className={styles.title} onClick={onClick} role="link" tabindex={0} onKeyDown={(ev) => (ev.keyCode === 13 && onClick())}><h1>{children}</h1></div>;
 }
 
 export let Tag = (props) => {
@@ -35,7 +35,7 @@ export class WritingEntry extends React.Component {
 
   toggle = (scroll) => {
     this.setState({expanded: !this.state.expanded});
-    scrollToComponent(this, {offset: 0, align: 'top', offset: -100, duration: 500});
+    scrollToComponent(this, {align: 'top', offset: -100, duration: 500});
   }
 
   tagComponent() {
@@ -67,9 +67,9 @@ export class WritingEntry extends React.Component {
         </div>
         <div className={styles.writingExcerpt}>
           {this.words()}
-          <a className={styles.expander} onClick={this.toggle} >
+          <button className={styles.expander} onClick={this.toggle} >
             {this.state.expanded ? 'collapse' : 'expand'}
-          </a>
+          </button>
         </div>
       </div>
     )
