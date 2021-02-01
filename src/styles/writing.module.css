@@ -46,6 +46,7 @@
 
 .expander {
   font-size: small;
+  cursor: pointer;
 }
 
 .expander:hover {

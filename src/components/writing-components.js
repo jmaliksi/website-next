@@ -2,6 +2,7 @@ import React from "react"
 import styles from "../styles/writing.module.css"
 import ReactHtmlParser from "react-html-parser"
 import classnames from "classnames"
+import scrollToComponent from 'react-scroll-to-component'
 
 export let Title = ({children}) => {
   return <div className={styles.title}><h1>{children}</h1></div>;
@@ -32,7 +33,7 @@ export class WritingEntry extends React.Component {
     }
   }
 
-  toggle = () => {
+  toggle = (scroll) => {
     this.setState({expanded: !this.state.expanded});
   }
 
@@ -65,7 +66,7 @@ export class WritingEntry extends React.Component {
         </div>
         <div className={styles.writingExcerpt}>
           {this.words()}
-          <a className={styles.expander} onClick={this.toggle} href={`#${this.slug}`}>
+          <a className={styles.expander} onClick={() => {scrollToComponent(this, {offset: 0, align: 'middle', duration: 500}); this.toggle()}} >
             {this.state.expanded ? 'collapse' : 'expand'}
           </a>
         </div>
