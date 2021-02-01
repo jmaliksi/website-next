@@ -4,53 +4,78 @@ import styles from "./layout.module.css"
 import RNG from "rng"
 import {Helmet} from "react-helmet"
 
-function BackgroundSvg({color, seed, points, border}) {
-  const sizeX = 2000;
-  const sizeY = 2000;
-  const rand = new RNG.MT(seed);
-  const numPts = points;
-
-  let pts = [];
-
-  for (var i = 0; i < numPts; i++) {
-    let dir = rand.range(0, 4);
-    switch (dir) {
-      case 0:
-        pts.push([
-          0,//rand.random() * -sizeX,
-          rand.random() * sizeY
-        ]);
-        break;
-      case 1:
-        pts.push([
-          rand.random() * sizeX,
-          0,//rand.random() * -sizeY
-        ]);
-        break;
-      case 2:
-        pts.push([
-          sizeX,// + rand.random() * sizeX,
-          rand.random() * sizeY
-        ]);
-        break;
-      case 4:
-        pts.push([
-          rand.random() * sizeX,
-          sizeY,// + rand.random() * sizeY
-        ]);
-        break;
-      default:
-        break;
-    }
+class BackgroundSvg extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {width: 2000, height: 2000};
+    this.color = props.color;
+    this.seed = props.seed;
+    this.points = props.points;
+    this.border = props.border;
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
-  return (
-    <svg width={sizeX} height={sizeY} className={styles.backgroundSvg}>
-      <polygon
-        points={pts.map(p => `${p[0]},${p[1]}`)}
-        style={{fill: color,stroke:border,strokeWidth:"1em",fillRule:"evenodd"}}
-      />
-    </svg>
-  );
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  render() {
+    const sizeX = this.state.width;
+    const sizeY = this.state.height;
+    const rand = new RNG.MT(this.seed);
+    const numPts = this.points;
+
+    let pts = [];
+
+    for (var i = 0; i < numPts; i++) {
+      let dir = rand.range(0, 4);
+      switch (dir) {
+        case 0:
+          pts.push([
+            0,
+            rand.random() * sizeY
+          ]);
+          break;
+        case 1:
+          pts.push([
+            rand.random() * sizeX,
+            0,
+          ]);
+          break;
+        case 2:
+          pts.push([
+            sizeX,
+            rand.random() * sizeY
+          ]);
+          break;
+        case 4:
+          pts.push([
+            rand.random() * sizeX,
+            sizeY,
+          ]);
+          break;
+        default:
+          break;
+      }
+    }
+    return (
+      <svg width={sizeX} height={sizeY} className={styles.backgroundSvg}>
+        <polygon
+          points={pts.map(p => `${p[0]},${p[1]}`)}
+          style={{fill: this.color, stroke: this.border, strokeWidth:"1em", fillRule:"evenodd"}}
+        />
+      </svg>
+    );
+  }
 }
 
 function Content({children}) {
@@ -82,7 +107,7 @@ export default ({highlight, children, title}) => (
       <meta property="twitter:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_NlE3clwQC.png"/>
     </Helmet>
     <div>
-      <BackgroundSvg color="cyan" border="black" seed="0" points="25"/>
+      <BackgroundSvg color="cyan" border="black" seed="1517" points="20"/>
       <Header highlight={highlight} title={title} />
       <Content>{children}</Content>
       <Footer />
