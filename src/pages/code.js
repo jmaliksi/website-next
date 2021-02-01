@@ -2,11 +2,12 @@ import React from "react"
 import Layout from "../components/layout"
 import styles from "../styles/code.module.css"
 import ReactHtmlParser from "react-html-parser"
+import classnames from "classnames"
 
 function CodeSummary({ node }) {
   const { title, slug, content, jetpack_featured_media_url, date } = node;
   return (
-    <div id={slug} className={styles.summaryCard}>
+    <div id={slug} className={classnames(styles.summaryCard, "popCard")}>
       { jetpack_featured_media_url &&
         <div className={styles.thumb}>
           <img className={styles.thumbImg} alt={slug} src={jetpack_featured_media_url} />

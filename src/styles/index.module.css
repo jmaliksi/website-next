@@ -70,8 +70,9 @@ figure {
 
 figcaption {
   margin-top: 2em;
-  font-size: x-small;
+  font-size: small;
   text-align: center;
+  font-style: italic;
 }
 
 .characterSheet {

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styles from "../styles/index.module.css"
+import classnames from "classnames"
 
 
 class CharacterSheet extends React.Component {
@@ -55,7 +56,8 @@ class CharacterSheet extends React.Component {
             {this.renderStats()}
           </div>
           <figcaption>
-            pfp by <a href="https://twitter.com/ouroborose">Rose Peng</a>
+            <span>click for skill card</span><br/>
+            <span style={{fontSize: "x-small"}}>pfp by <a href="https://twitter.com/ouroborose">Rose Peng</a></span>
           </figcaption>
         </figure>
       </div>
@@ -120,7 +122,7 @@ function ContactInfo() {
 
 export default ({data}) => (
   <Layout highlight="About">
-    <div className={styles.content}>
+    <div className={classnames(styles.content, "popCard")}>
       <h1>hi</h1>
       <h2 id="about">about</h2>
       <CharacterSheet>

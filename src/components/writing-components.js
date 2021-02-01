@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "../styles/writing.module.css"
 import ReactHtmlParser from "react-html-parser"
+import classnames from "classnames"
 
 export let Title = ({children}) => {
   return <div className={styles.title}><h1>{children}</h1></div>;
@@ -57,7 +58,7 @@ export class WritingEntry extends React.Component {
 
   render() {
     return (
-      <div className={styles.writingEntry} id={this.slug}>
+      <div className={classnames(styles.writingEntry, "popCard")} id={this.slug}>
         <div>
           {this.tagComponent()}
           <Title>{this.title}</Title>

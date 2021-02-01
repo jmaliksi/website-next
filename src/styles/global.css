@@ -32,3 +32,23 @@ a:hover {
 .wp-block-image img {
   width: 100%;
 }
+
+.popCard {
+  animation: popCardAnim .5s;
+}
+
+@keyframes popCardAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(2em);
+  }
+
+  50% {
+    transform: translateY(-.3em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
