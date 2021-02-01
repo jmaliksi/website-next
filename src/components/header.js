@@ -26,8 +26,8 @@ function fafo(word, baseSpacing) {
     let style = {
       fontSize: `${rand.random() * .4 + .8}em`,
     };
-    if (rand.random() < .2) {
-      style.verticalAlign = "bottom";
+    if (rand.random() < .8) {
+      style.verticalAlign = "middle";
     }
     //return <span style={{position: "relative", top: `${rand.random() * .0}em`, fontSize: `${rand.random() * .2 + .9}em`}} key={inc}>{c}</span>;
     return <span style={style} key={inc}>{c}</span>;
