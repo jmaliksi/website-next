@@ -55,6 +55,7 @@ strong {
 
 figure {
   margin: 0;
+  margin-left: 1em;
   max-width: 200px;
   background: white;
   box-shadow: .2em .2em 0 black;
