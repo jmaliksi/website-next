@@ -62,5 +62,6 @@ export default (props) => (
         <HeaderLink to="/writing" name="writing" highlight={props.highlight} />
       </div>
     </div>
+    <div className={styles.rightSpacer}>&nbsp;</div>
   </div>
 )
