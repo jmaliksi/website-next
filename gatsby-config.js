@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-  pathPrefix: "website-next",
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
