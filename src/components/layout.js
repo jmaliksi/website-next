@@ -2,6 +2,7 @@ import React from "react"
 import Header from "./header"
 import styles from "./layout.module.css"
 import RNG from "rng"
+import {Helmet} from "react-helmet"
 
 function BackgroundSvg({color, seed, points, border}) {
   const sizeX = 2000;
@@ -65,10 +66,26 @@ function Footer() {
 }
 
 export default ({highlight, children, title}) => (
-  <div>
-    <BackgroundSvg color="cyan" border="black" seed="0" points="25"/>
-    <Header highlight={highlight} title={title} />
-    <Content>{children}</Content>
-    <Footer />
-  </div>
+  <>
+    <Helmet>
+      <title>stuff by joe maliksi</title>
+      <meta name="description" content="just a bunch of stuff." />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="stuff by joe maliksi" />
+      <meta property="og:description" content="just a bunch of stuff" />
+      <meta property="og:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_KKwAUVUSv.png"/>
+
+      <meta property="twitter:title" content="stuff by joe maliksi" />
+      <meta property="twitter:description" content="just a bunch of stuff" />
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_KKwAUVUSv.png"/>
+    </Helmet>
+    <div>
+      <BackgroundSvg color="cyan" border="black" seed="0" points="25"/>
+      <Header highlight={highlight} title={title} />
+      <Content>{children}</Content>
+      <Footer />
+    </div>
+  </>
 )
