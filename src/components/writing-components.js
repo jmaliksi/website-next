@@ -11,7 +11,7 @@ export let Tag = (props) => {
   const { name, slug } = props;
   // TODO figure out combined query params
   return (
-    <a className={styles.tag} href={`writing/${slug}`}>&nbsp;({name})&nbsp;</a>
+    <a className={styles.tag} href={`/writing/${slug}`}>&nbsp;({name})&nbsp;</a>
   );
 }
 

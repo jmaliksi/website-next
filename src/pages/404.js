@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 export default () => (
   <Layout>
     <center>
-      <div style={{padding: `50px`}}>
+      <div style={{padding: `50px`, backgroundColor: "white"}}>
         <h1>oh no</h1>
         <h2>this page is a ghost</h2>
         <Link to="/">home</Link>
