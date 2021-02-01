@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html {
-  background-color: black;
+  background-color: black
 }
 
 html, 
@@ -40,7 +40,7 @@ a:hover {
 @keyframes popCardAnim {
   0% {
     opacity: 0;
-    transform: translateY(2em);
+    transform: translateY(5em);
   }
 
   50% {

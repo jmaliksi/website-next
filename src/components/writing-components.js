@@ -4,8 +4,8 @@ import ReactHtmlParser from "react-html-parser"
 import classnames from "classnames"
 import scrollToComponent from 'react-scroll-to-component'
 
-export let Title = ({children}) => {
-  return <div className={styles.title}><h1>{children}</h1></div>;
+export let Title = ({onClick, children}) => {
+  return <div className={styles.title} onClick={onClick}><h1>{children}</h1></div>;
 }
 
 export let Tag = (props) => {
@@ -35,6 +35,7 @@ export class WritingEntry extends React.Component {
 
   toggle = (scroll) => {
     this.setState({expanded: !this.state.expanded});
+    scrollToComponent(this, {offset: 0, align: 'top', offset: -100, duration: 500});
   }
 
   tagComponent() {
@@ -62,11 +63,11 @@ export class WritingEntry extends React.Component {
       <div className={classnames(styles.writingEntry, "popCard")} id={this.slug}>
         <div>
           {this.tagComponent()}
-          <Title>{this.title}</Title>
+          <Title onClick={this.toggle}>{this.title}</Title>
         </div>
         <div className={styles.writingExcerpt}>
           {this.words()}
-          <a className={styles.expander} onClick={() => {scrollToComponent(this, {offset: 0, align: 'middle', duration: 500}); this.toggle()}} >
+          <a className={styles.expander} onClick={this.toggle} >
             {this.state.expanded ? 'collapse' : 'expand'}
           </a>
         </div>
