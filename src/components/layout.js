@@ -74,12 +74,12 @@ export default ({highlight, children, title}) => (
       <meta property="og:type" content="website" />
       <meta property="og:title" content="stuff by joe maliksi" />
       <meta property="og:description" content="just a bunch of stuff" />
-      <meta property="og:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_KKwAUVUSv.png"/>
+      <meta property="og:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_NlE3clwQC.png"/>
 
       <meta property="twitter:title" content="stuff by joe maliksi" />
       <meta property="twitter:description" content="just a bunch of stuff" />
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_KKwAUVUSv.png"/>
+      <meta property="twitter:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_NlE3clwQC.png"/>
     </Helmet>
     <div>
       <BackgroundSvg color="cyan" border="black" seed="0" points="25"/>
