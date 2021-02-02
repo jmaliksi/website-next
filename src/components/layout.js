@@ -43,7 +43,7 @@ class Bloop extends React.Component {
 class BackgroundSvg extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {width: window.innerWidth, height: window.innerHeight};
+    this.state = {width: 2000, height: 2000};
     this.color = props.color;
     this.seed = props.seed;
     this.points = props.points;
