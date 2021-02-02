@@ -25,3 +25,7 @@
   margin: 0;
   z-index: -1;
 }
+
+.bloop {
+  transition: 1s ease-out;
+}

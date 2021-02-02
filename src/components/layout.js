@@ -4,15 +4,65 @@ import styles from "./layout.module.css"
 import RNG from "rng"
 import {Helmet} from "react-helmet"
 
+/*
+class Bloop extends React.Component {
+  constructor(props) {
+    super(props);
+    const {x, y, r, sx, sy} = props;
+    this.state = {x: x, y: y, run: false};
+    this.sx = sx;
+    this.sy = sy;
+    this.r = r;
+  }
+
+  setRun(run) {
+    this.setState({run: run});
+  }
+
+  shuffle = () => {
+    console.log('asdf');
+    this.setState({
+      x: Math.random() * this.sx,
+      y: Math.random() * this.sy
+    });
+  }
+
+  render() {
+    return <circle
+      className={styles.bloop}
+      fill="black"
+      cx={this.state.x}
+      cy={this.state.y}
+      r={this.r}
+      key={`${this.state.x}${this.state.y}`}
+    />
+  }
+}
+*/
+
 class BackgroundSvg extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {width: 2000, height: 2000};
+    this.state = {width: window.innerWidth, height: window.innerHeight};
     this.color = props.color;
     this.seed = props.seed;
     this.points = props.points;
     this.border = props.border;
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
+    /*
+    this.bloops = []
+    let numBloops = 50;
+    for (var i = 0; i < numBloops; i++) {
+      this.bloops.push(<Bloop
+        x={Math.random() * this.state.width}
+        y={Math.random() * this.state.height}
+        r={10 + Math.random() * 50}
+        sx={this.state.width}
+        sy={this.state.height}
+      />);
+    }
+    */
   }
 
   componentDidMount() {

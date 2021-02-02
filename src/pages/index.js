@@ -49,7 +49,7 @@ class CharacterSheet extends React.Component {
 
   render = () => {
     return (
-      <div className={styles.characterSheet} onMouseEnter={this.showStats} onMouseLeave={this.hideStats} onMouseDown={this.nextPage} role="button" tabindex={0}>
+      <div className={styles.characterSheet} onMouseEnter={this.showStats} onMouseLeave={this.hideStats} onMouseDown={this.nextPage} role="button" tabIndex={0}>
         <figure>
           <div className={styles.pfp}>
             {this.pfp()}

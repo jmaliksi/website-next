@@ -47,6 +47,9 @@
 .rightSpacer {
   flex: 1 1 0px;
   display: none;
+  vertical-align: middle;
+  text-align: right;
+  align-self: center;
 }
 
 .navigation {
