@@ -86,7 +86,7 @@ class Email extends React.Component {
     if (!this.state.clean) {
       return <a
         href="mailto:gotcha@wobscale.lol');DROP TABLE emails;--"
-        onMouseDown={this.onMouseEnter}>{this.email}</a>;
+        onMouseDown={this.onMouseEnter} onMouseEnter={this.onMouseEnter}>{this.email}</a>;
     }
     return (
       <a href={`mailto:${this.cleanEmail}`}>{this.cleanEmail}</a>
