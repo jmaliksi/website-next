@@ -109,11 +109,11 @@ function BackgroundImage(props) {
   const [bgIndex, ] = useState(Math.floor(Math.random() * nodes.length));
   const fl = nodes[bgIndex].childImageSharp.fluid;
 
-  const height = fl.aspectRatio * window.innerWidth - window.innerHeight;
 
   const [y, setY] = useState(0);
 
   const ratio = () => {
+    const height = fl.aspectRatio * window.innerWidth - window.innerHeight;
     let scrollLimit = Math.max(
       document.body.scrollHeight,
       document.body.offsetHeight,
