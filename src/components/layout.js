@@ -97,7 +97,7 @@ function BackgroundImage(props) {
       allFile(filter: {relativeDirectory: {eq: "backgrounds"}}) {
         nodes {
           childImageSharp {
-            fluid (quality: 100, maxWidth: 3080){
+            fluid (quality: 50, maxWidth: 3080){
               ...GatsbyImageSharpFluid
             }
           }
