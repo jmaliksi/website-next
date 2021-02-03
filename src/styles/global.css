@@ -54,3 +54,7 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+.has-small-font-size {
+  font-size: x-small;
+}
