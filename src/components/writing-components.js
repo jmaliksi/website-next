@@ -5,7 +5,7 @@ import classnames from "classnames"
 import scrollToComponent from 'react-scroll-to-component'
 
 export let Title = ({onClick, children}) => {
-  return <div className={styles.title} onClick={onClick} role="link" tabindex={0} onKeyDown={(ev) => (ev.keyCode === 13 && onClick())}><h1>{children}</h1></div>;
+  return <div className={styles.title} onClick={onClick} role="link" tabIndex={0} onKeyDown={(ev) => (ev.keyCode === 13 && onClick())}><h1>{children}</h1></div>;
 }
 
 export let Tag = (props) => {

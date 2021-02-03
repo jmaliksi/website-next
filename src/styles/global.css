@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 html {
-  background-color: black
+  background-color: black;
+  background-size: 100% auto;
+  /*background-image: url('https://ik.imagekit.io/4waizx9and/wobsite_backgrounds/139D7709-33BA-446B-B736-0BF92566E2B0_XR-XzdbC4.jpg');*/
 }
 
 html, 
