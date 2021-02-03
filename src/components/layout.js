@@ -130,8 +130,9 @@ function BackgroundImage(props) {
   useEffect(() => {
     if (ratio() < 1) {
       window.addEventListener('scroll', onScroll);
+      console.log("bluh");
     }
-  }, [ratio, onScroll]);
+  }, []);
 
   let style = {};
 
