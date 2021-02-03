@@ -10,7 +10,6 @@ class BackgroundSvg extends React.Component {
   constructor(props) {
     super(props);
     this.state = {width: 2000, height: 2000};
-    this.color = props.color;
     this.seed = props.seed;
     this.points = props.points;
     this.border = props.border;
@@ -35,24 +34,8 @@ class BackgroundSvg extends React.Component {
     const sizeY = this.state.height;
     const pts = polygonPoints(sizeX, sizeY, this.seed, this.points)
 
-    const ptString = pts.map(p => `${Math.floor(p[0])}px ${Math.floor(p[1])}px`).toString();
-
-    /*
     return (
-      <svg width={sizeX} height={sizeY} className={styles.backgroundSvg}>
-        <polygon
-          points={pts.map(p => `${p[0]},${p[1]}`)}
-          style={{fill: this.color, stroke: this.border, strokeWidth:".5em", fillRule:"evenodd"}}
-        />
-      </svg>
-    );
-
-        <img className={styles.backgroundSvg} src="https://ik.imagekit.io/4waizx9and/wobsite_backgrounds/B0424500-29EB-4BD7-84E3-33FEAE58EBAB_AHxN8xwYcJ.jpg" style={{"clip-path": `polygon(${ptString})`}}/>
-    */
-    return (
-      <>
-        <BackgroundImage clipPath={`polygon(${ptString})`}/>
-      </>
+        <BackgroundImage parallax={false} clipPath={pts} fade={0.5}/>
     );
   }
 }
@@ -148,23 +131,29 @@ function BackgroundImage(props) {
     if (ratio() < 1) {
       window.addEventListener('scroll', onScroll);
     }
-  }, []);
+  }, [ratio, onScroll]);
 
-  let style = {
-    transform: `translate(0, ${y}px)`
-  };
+  let style = {};
 
   if (props.clipPath) {
-    styles["clipPath"] = props.clipPath;
+    const ptString = props.clipPath.map(p => `${Math.floor(p[0])}px ${Math.floor(p[1])}px`).toString();
+    style["clipPath"] = `polygon(${ptString})`;
+  }
+
+  let offset = y;
+  if (props.parallax) {
+    offset /= 2;
   }
 
   return (
-    <div className={styles.backgroundImg} style={style}>
-      <div className={styles.imgFade}>&nbsp;</div>
-      <Img
-        fluid={fl}
-        alt="background"
-      />
+    <div className={styles.backgroundSvg} style={style}>
+      <div className={styles.backgroundImg} style={{transform: `translate(0, ${offset}px)`}}>
+        {props.fade && <div className={styles.imgFade} style={{backgroundColor: `rgba(0, 0, 0, ${props.fade})`}}>&nbsp;</div>}
+        <Img
+          fluid={fl}
+          alt="background"
+        />
+      </div>
     </div>
   );
 }
@@ -188,8 +177,8 @@ export default ({data, highlight, children, title}) => {
         <meta property="twitter:image" content="https://ik.imagekit.io/4waizx9and/Screen_Shot_2021-02-01_at_3.26.45_PM_NlE3clwQC.png"/>
       </Helmet>
       <div>
-        {true && <BackgroundImage />}
-        {true && <BackgroundSvg color="cyan" border="black" seed="1517" points="20"/>}
+        <BackgroundImage parallax={true} fade={0.7}/>
+        <BackgroundSvg border="black" seed="1517" points="10"/>
         <Header highlight={highlight} title={title} />
         <Content>{children}</Content>
         <Footer />
