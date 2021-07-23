@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{QHRp:function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),i=e.n(a),r=e("Bl7J");t.default=function(){return i.a.createElement(r.a,{highlight:"Art"},"bluh")}}}]);
+//# sourceMappingURL=component---src-pages-art-js-3770a28a4d181cd9cb9b.js.map
