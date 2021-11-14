@@ -75,3 +75,38 @@ export class WritingEntry extends React.Component {
     )
   }
 }
+
+export const TagBar = (props) => {
+  const { nodes } = props;
+  let tags = [];
+  let uniques = new Set();
+  for (let i in nodes) {
+    const node = nodes[i];
+    if (!node.tags) {
+      continue;
+    }
+    for (let j in node.tags) {
+      const tag = node.tags[j];
+      if (uniques.has(tag.slug)) {
+        continue;
+      }
+      uniques.add(tag.slug);
+      tags.push(tag);
+    }
+  }
+  tags.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
+  return (
+    <div className={classnames(styles.writingEntry, "popCard")}>
+      <span className={styles.tag}>tags:</span>
+      {tags.map(tag => (<Tag slug={tag.slug} name={tag.name} key={tag.slug} />))}
+    </div>
+  );
+}
