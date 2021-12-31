@@ -82,3 +82,9 @@
 figure {
   margin-block-end: 0;
 }
+
+hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  max-width: 6em;
+}
