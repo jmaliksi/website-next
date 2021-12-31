@@ -8,7 +8,7 @@ import ReactHtmlParser from "react-html-parser"
 
 export default ({data, pageContext}) => {
   const nodes = data.allWordpressPost.nodes;
-  const excerpt = `${ReactHtmlParser(nodes[0]?.excerpt)[0].props.children[0]}...` || pageContext.tagName;
+  const excerpt = `${ReactHtmlParser(nodes[0]?.excerpt)[0]?.props.children[0] || pageContext.tagName}...`;
   return (
     <Layout highlight="Writing" title={`Reading: ${pageContext.tagName}`}>
       <Helmet>
