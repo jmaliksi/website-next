@@ -162,7 +162,7 @@ export default ({data, highlight, children, title}) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet defer={true}>
         <title>stuff by joe maliksi</title>
         <meta name="description" content="just a bunch of stuff." />
 
