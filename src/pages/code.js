@@ -4,13 +4,20 @@ import styles from "../styles/code.module.css"
 import ReactHtmlParser from "react-html-parser"
 import classnames from "classnames"
 
+function fixThumbs(url) {
+  if (url.startsWith("//wp-content")) {
+    return `https://jmaliksitest.wordpress.com${url.substr(1)}`;
+  }
+  return url;
+}
+
 function CodeSummary({ node }) {
   const { title, slug, content, jetpack_featured_media_url, date } = node;
   return (
     <div id={slug} className={classnames(styles.summaryCard, "popCard")}>
       { jetpack_featured_media_url &&
         <div className={styles.thumb}>
-          <img className={styles.thumbImg} alt={slug} src={jetpack_featured_media_url} />
+          <img className={styles.thumbImg} alt={slug} src={fixThumbs(jetpack_featured_media_url)} />
         </div>
       }
       <div className={styles.titleRow}>
