@@ -44,9 +44,5 @@
   },
   "bugs": {
     "url": "https://github.com/jmaliksi/website-next/issues"
-  },
-  "engines": {
-    "node": ">=12.0.0 <13.0.0",
-    "npm": ">=6.0.0 <7.0.0"
   }
 }
